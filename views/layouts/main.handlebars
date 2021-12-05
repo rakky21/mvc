@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Tech Blog</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
-    {{!-- spectre css --}}
+  {{!-- spectre css --}}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css"
     integrity="sha512-9RIcp1f4CE6dEuYX9085tXaEbYd1ap04d2Av1ub/dwuT33WbfbHStDdQ+shKrp5wzZzleh5DOg+7ABSnaQP/nQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -14,31 +14,40 @@
 </head>
 
 <body>
-  <div class="container">
-    <header class="header_nav">
-      <h1>
-        <a href="/">The Tech Blog</a>
-      </h1>
-      <nav>
-        {{#if loggedIn}}
-        <a href="/dashboard">dashboard</a>
-        <button id="logout" class="btn-no-style">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
+  <div class="container hero bg-primary col-12 p-2">
+    <div class="hero-body-sm p-2 col-12">
+      <header>
+        <nav class="text-dark">
+          <a href="/">Home</a>
+          {{#if loggedIn}}
+          <a href="/dashboard">Dashboard</a>
+          <button id="logout" class="float-right btn-no-style btn btn-primary btn-lg">Logout</button>
+          {{else}}
+          <a href="/login">Login</a>
+          {{/if}}
+
+        <h1>
+          <a href="/dashboard">The Tech Blog</a>
+        </h1>
+                </nav>
+    </div>
     </header>
-    <main>
-      {{{ body }}}
-    </main>
-    <footer>
-      Thanks for visiting!
-    </footer>
   </div>
   
+  {{!-- </header> --}}
+  <main>
+    {{{ body }}}
+  
+  </main>
+  <footer>
+    Thanks for visiting!
+  </footer>
+  </div>
+
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
   {{/if}}
+  
 </body>
 
 </html>

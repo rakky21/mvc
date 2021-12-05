@@ -1,4 +1,4 @@
-<form class="login-form">
+<form class="login-form bg-gray">
   <div>
     <label for="email-login">email:</label>
     <input type="text" id="email-login" />
@@ -11,8 +11,11 @@
     <button type="submit">login</button>
   </div>
 </form>
+{{!-- a button to take me to a sign up screen 
+instead of having them both on the same section --}}
+    <button type="submit">signup</button>
 
-<form class="signup-form">
+{{!-- <form class="signup-form">
   <div>
     <label for="username-signup">username:</label>
     <input type="text" id="username-signup" />
@@ -28,6 +31,19 @@
   <div>
     <button type="submit">signup</button>
   </div>
-</form>
+</form> --}}
 
+{{#if posts.length}}
+<section>
+  <h2 class="text-warning">Your Posts</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <li>
+      {{> post-info post}}
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
 <script src="/javascript/login.js"></script>
