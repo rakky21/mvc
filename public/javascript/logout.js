@@ -12,8 +12,8 @@ async function logout() {
 }
 
 // logout timer
-setInterval(function() {
-logout()
-}, 30000)
+// setInterval(function() {
+// logout()
+// }, 30000)
 
 document.querySelector('#logout').addEventListener('click', logout);

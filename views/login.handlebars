@@ -1,49 +1,38 @@
-<form class="login-form bg-gray">
-  <div>
-    <label for="email-login">email:</label>
-    <input type="text" id="email-login" />
-  </div>
-  <div>
-    <label for="password-login">password:</label>
-    <input type="password" id="password-login" />
-  </div>
-  <div>
-    <button type="submit">login</button>
-  </div>
-</form>
-{{!-- a button to take me to a sign up screen 
-instead of having them both on the same section --}}
-    <button type="submit">signup</button>
+<div class="container">
+  <div class="columns col-8">
 
-<form class="signup-form">
-  <div>
-    <label for="username-signup">username:</label>
-    <input type="text" id="username-signup" />
-  </div>
-  <div>
-    <label for="email-signup">email:</label>
-    <input type="text" id="email-signup" />
-  </div>
-  <div>
-    <label for="password-signup">password:</label>
-    <input type="password" id="password-signup" />
-  </div>
-  <div>
-    <button type="submit">signup</button>
-  </div>
-</form>
+    <form class="login-form bg-gray form-group col-mx-auto">
+      <div>
+        <label for="email-login" class="form-label">email:</label>
+        <input type="text" class="form-input" id="email-login" />
+      </div>
+      <div>
+        <label for="password-login" class="form-label">password:</label>
+        <input type="password" class="form-input" id="password-login" />
+      </div>
+      <div>
+        <button type="submit" class="btn btn-primary btn-lg">login</button>
+      </div>
+    </form>
+    {{!-- a button to take me to a sign up screen
+    instead of having them both on the same section --}}
 
-{{#if posts.length}}
-<section>
-  <h2 class="text-warning">Your Posts</h2>
-  <ol>
-    {{#each posts as |post|}}
-    <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-    </li>
-    {{/each}}
-  </ol>
-</section>
-{{/if}}
-<script src="/javascript/login.js"></script>
+    <form class="signup-form col-mx-auto">
+      <div>
+        <label for="username-signup" class="form-label">username:</label>
+        <input type="text" class="form-input" id="username-signup" />
+      </div>
+      <div>
+        <label for="email-signup" class="form-label">email:</label>
+        <input type="text" class="form-input" id="email-signup" />
+      </div>
+      <div>
+        <label for="password-signup" class="form-label">password:</label>
+        <input type="password" class="form-input" id="password-signup" />
+      </div>
+      <div>
+        <button type="submit" class="btn btn-primary btn-lg">signup</button>
+      </div>
+    </form>
+  </div>
+  <script src="/javascript/login.js"></script>

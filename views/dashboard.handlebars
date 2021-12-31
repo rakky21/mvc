@@ -1,37 +1,36 @@
 <div class="container">
-  <div class="columns">
+  <div class="columns col-12">
 
-<section class="bg-gray form-group col-4 col-mx-auto">
-  <h2 class="bg-primary">Create New Post</h2>
+    <section class="col-2 col-mx-auto form-group">
+      <h2>Create New Post</h2>
 
-  <form class="new-post-form col-6">
-    <div>
-      <label for="post-title" class="form-label">Title</label>
-      <input type="text" id="post-title" name="post-title" />
-    </div>
+      <form class="new-post-form">
+        <div>
+          <label for="post-title" class="form-label bg-primary">Title</label>
+          <input type="text" id="post-title" name="post-title" />
+        </div>
+        <div>
+          <label for="post-url">Comment</label>
+          <input type="text" id="post-url" class="form-input col-6" placeholder="Comment" rows="3" name="post-url" />
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+      </form>
+    </section>
 
-    <div>
-      <label for="post-url">Comment</label>
-      <input type="text" id="post-url" class="form-input col-4" name="post-url" />
-    </div>
-    <button type="submit" class="btn">Create</button>
-  </form>
-</section>
-
-{{#if posts.length}}
-<section class="bg-gray col-6 col-mx-auto">
-  <h2 class="bg-primary">Your Posts</h2>
-  <ol>
-    {{#each posts as |post|}}
-    <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" style="" class="edit-link float-right">Edit post</a>
-    </li>
-    {{/each}}
-  </ol>
-</section>
-{{/if}}
-</div>
+    {{#if posts.length}}
+    <section class="col-mx-auto col-8">
+      <h2>Your Posts</h2>
+      <ol>
+        {{#each posts as |post|}}
+        <li>
+          {{> post-info post}}
+        </li>
+        {{/each}}
+      </ol>
+    </section>
+    {{/if}}
+    
+  </div>
 </div>
 
 <script src="/javascript/add-post.js"></script>
