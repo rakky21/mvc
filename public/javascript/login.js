@@ -21,7 +21,6 @@ async function loginFormHandler(event) {
     }
   }
 }
-// log them out once it's closed.
 
 async function signupFormHandler(event) {
   event.preventDefault();
